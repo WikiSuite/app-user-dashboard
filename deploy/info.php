@@ -5,8 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'user_dashboard';
-$app['version'] = '2.5.0';
-$app['release'] = '1';
+$app['version'] = '2.5.1';
 $app['vendor'] = 'WikiSuite';
 $app['packager'] = 'WikiSuite';
 $app['license'] = 'GPLv3';
