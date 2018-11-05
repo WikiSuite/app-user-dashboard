@@ -124,8 +124,15 @@ class Dashboard_Helper extends Engine
         else
             $lastmod = 0;
 
-        if ($lastmod && (time() - $lastmod < Dashboard_Helper::CACHE_TIME_SECONDS))
-            return $cache->get_contents_as_array();
+        if ($lastmod && (time() - $lastmod < Dashboard_Helper::CACHE_TIME_SECONDS)) {
+            $raw_list = $cache->get_contents_as_array();
+
+            // Don't return empty line as widget entry
+            if (empty($raw_list[0]))
+                return [];
+            else
+                return $raw_list;
+        }
 
         $app_list = clearos_get_apps();
         $widget_list = [];

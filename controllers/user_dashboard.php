@@ -65,8 +65,10 @@ class User_Dashboard extends ClearOS_Controller
         try {
             $widgets = $this->dashboard_helper->get_registered_widgets();
 
-            $data['widgets'] = $this->page->view_controllers($widgets, lang('user_dashboard_app_name'), array('type' => MY_Page::TYPE_DASHBOARD_WIDGET));
-
+            if (!empty($widgets))
+                $data['widgets'] = $this->page->view_controllers($widgets, lang('user_dashboard_app_name'), array('type' => MY_Page::TYPE_DASHBOARD_WIDGET));
+            else
+                $data['widgets'] = [];
         } catch (Exception $e) {
             $this->page->view_exception($e);
             return;

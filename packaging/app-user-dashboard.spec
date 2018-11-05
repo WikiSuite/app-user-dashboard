@@ -1,7 +1,7 @@
 
 Name: app-user-dashboard
 Epoch: 1
-Version: 2.5.2
+Version: 2.5.3
 Release: 1%{dist}
 Summary: User Dashboard
 License: GPLv3
@@ -24,7 +24,6 @@ Summary: User Dashboard - API
 License: LGPLv3
 Group: Applications/API
 Requires: app-base-core
-Requires: app-base-core >= 1:2.5.42
 Requires: app-accounts-core
 Requires: app-groups-core
 Requires: app-users-core
