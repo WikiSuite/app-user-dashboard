@@ -1,7 +1,7 @@
 
 Name: app-user-dashboard
 Epoch: 1
-Version: 2.5.3
+Version: 2.5.4
 Release: 1%{dist}
 Summary: User Dashboard
 License: GPLv3

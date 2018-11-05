@@ -77,7 +77,9 @@ class User_Dashboard extends ClearOS_Controller
         // Load the views
         //---------------
 
-        if (empty($data['widgets']))
+        if ($this->session->userdata('username') === 'root')
+            $this->page->view_form('user_dashboard/root', [], lang('user_dashboard_app_name'));
+        else if (empty($data['widgets']))
             $this->page->view_form('user_dashboard/none', [], lang('user_dashboard_app_name'));
         else
             $this->page->view_form('user_dashboard/canvas', $data, lang('user_dashboard_app_name'));
