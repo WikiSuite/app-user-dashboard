@@ -5,7 +5,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 $app['basename'] = 'user_dashboard';
-$app['version'] = '2.5.4';
+$app['version'] = '2.5.5';
 $app['vendor'] = 'WikiSuite';
 $app['packager'] = 'WikiSuite';
 $app['license'] = 'GPLv3';
@@ -38,6 +38,7 @@ $app['requires'] = array(
 );
 
 $app['core_requires'] = array(
+    'app-base >= 1:2.5.42',
     'app-accounts-core',
     'app-groups-core',
     'app-users-core',

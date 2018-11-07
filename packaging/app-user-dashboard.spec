@@ -1,7 +1,7 @@
 
 Name: app-user-dashboard
 Epoch: 1
-Version: 2.5.4
+Version: 2.5.5
 Release: 1%{dist}
 Summary: User Dashboard
 License: GPLv3
@@ -24,6 +24,7 @@ Summary: User Dashboard - API
 License: LGPLv3
 Group: Applications/API
 Requires: app-base-core
+Requires: app-base >= 1:2.5.42
 Requires: app-accounts-core
 Requires: app-groups-core
 Requires: app-users-core
@@ -47,7 +48,7 @@ install -D -m 0644 packaging/user_dashboard.acl %{buildroot}/var/clearos/base/ac
 logger -p local6.notice -t installer 'app-user-dashboard - installing'
 
 %post core
-logger -p local6.notice -t installer 'app-user-dashboard-core - installing'
+logger -p local6.notice -t installer 'app-user-dashboard-api - installing'
 
 if [ $1 -eq 1 ]; then
     [ -x /usr/clearos/apps/user_dashboard/deploy/install ] && /usr/clearos/apps/user_dashboard/deploy/install
@@ -64,7 +65,7 @@ fi
 
 %preun core
 if [ $1 -eq 0 ]; then
-    logger -p local6.notice -t installer 'app-user-dashboard-core - uninstalling'
+    logger -p local6.notice -t installer 'app-user-dashboard-api - uninstalling'
     [ -x /usr/clearos/apps/user_dashboard/deploy/uninstall ] && /usr/clearos/apps/user_dashboard/deploy/uninstall
 fi
 
