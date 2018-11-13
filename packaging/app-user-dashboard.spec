@@ -17,7 +17,7 @@ Requires: app-groups
 Requires: app-users
 
 %description
-The User Dashboard app provides information and settings for end users.
+The User Dashboard app provides information and settings for end users (including info and links from installed apps like Syncthing, etc.)
 
 %package core
 Summary: User Dashboard - API
@@ -30,7 +30,7 @@ Requires: app-groups-core
 Requires: app-users-core
 
 %description core
-The User Dashboard app provides information and settings for end users.
+The User Dashboard app provides information and settings for end users (including info and links from installed apps like Syncthing, etc.)
 
 This package provides the core API and libraries.
 
